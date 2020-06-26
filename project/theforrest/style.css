@@ -8,10 +8,10 @@
 /* Header หัวกระดาษ */
 .header{
 	width: 100%;
-	height: 100px;
 	background: #343742;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .logo_header{
