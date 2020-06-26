@@ -88,3 +88,37 @@
   background-color: #555;
   color: white;
 }
+
+
+
+.body1-container{
+	
+	width: 100%;
+	background: #343742;
+	display: inline-flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.body1-info-container{
+	padding: 30px 50px 30px 50px;
+	width: 100%;
+	text-align: left;
+	color: #edf0f1;
+	
+}
+
+.fb-container{
+	background: #0088a9;
+	padding: 30px 0px 30px 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.fb-container-head{
+	
+	padding: 5px 0px 30px 0px;
+	width: 100%;
+	text-align: center;
+	color: #edf0f1;
+}
+
