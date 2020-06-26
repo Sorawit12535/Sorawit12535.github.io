@@ -1,7 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
-	font-family: Torus,Inter,Helvetica Neue,Tahoma,Arial,Hiragino Kaku Gothic ProN,Meiryo,Microsoft YaHei,Apple SD Gothic Neo,sans-serif;
+	font-family: 'Itim', Microsoft YaHei, Apple SD Gothic Neo,sans-serif;
 }
 
 
@@ -27,6 +27,7 @@
 	padding: 20px 0px 20px 0px;
 	text-align: center;
 	list-style: none;
+	font-size: 20px;
 }
 
 .navigation li{
@@ -104,6 +105,7 @@
 	width: 100%;
 	text-align: left;
 	color: #edf0f1;
+	font-size:20px
 	
 }
 
