@@ -1,7 +1,7 @@
 ## Welcome!
 Project Environment สำหรับใช้ทำงานและโพรเจคต่างๆ
 
-Github ของเด็กว่างงานคนนึงที่ชื่อว่า Piney >~<
+Github ของเด็กคนนึงที่ชื่อว่า Piney >~<
 
 > "HW" Project Link : https://sorawit12535.github.io
 
