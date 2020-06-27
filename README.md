@@ -1,4 +1,4 @@
-## Welcome to funny project!
+## Welcome!
 Project Environment สำหรับใช้ทำงานและโพรเจคต่างๆ
 
 Github ของเด็กว่างงานคนนึงที่ชื่อว่า Piney >~<
