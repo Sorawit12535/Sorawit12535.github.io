@@ -14,24 +14,98 @@
 		<h3>Homework สำหรับประชาชน ของประชาชน เพื่อประชาชน</h3>
 		<p>ถ้าผิดพลาดประการใด ก็ปล่อยให้เป็นอย่างงั้นแหละ ขี้เกียจแก้ 555</p>
 
-		<div class="recently">
-				<div class="recenttopic">
-					<h3>งานที่อัพโหลดล่าสุด (Recent Upload HW)</h3>
-				</div>
+		<div class="filetable">
+				<input type="text" id="searchinput" onkeyup="searchingfx()" placeholder="ค้นหาชื่อ..." title="Type in a name">
+
+
+				<table id="datatable" style="width:100%;">
+
+
+  				<tr>
+    			<th style="width:20%;">วิชา (Subject)</th>
+    			<th style="width:30%;">ชื่องาน (Name)</th>
+    			<th style="width:50%;">ลิงค์ (Link)</th>
+  				</tr>
+
+
+  				<tr>
+    				<td>เคมี</td>
+   				 	<td>1. ไอโซเมอร์</td>
+				    <td><a href="/file/1.ไอโซเมอร์.pdf">1. ไอโซเมอร์</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>2. หมู่ฟังก์ชัน</td>
+				    <td><a href="/file/2.หมู่ฟังก์ชัน.pdf">2. หมู่ฟังก์ชัน</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>3. Alkane</td>
+				    <td><a href="/file/3.Alkane.pdf">3. Alkane</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>4. Alkene</td>
+				    <td><a href="/file/4.Alkene.pdf">4. Alkene</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>5. Alkyne</td>
+				    <td><a href="/file/5.Alkyne.pdf">5. Alkyne</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>6. Aromatic</td>
+				    <td><a href="/file/6.Aromatic.pdf">6. Aromatic</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>7. Alcohol</td>
+				    <td><a href="/file/7.alcohol.pdf">7. Alcohol</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>8. Carboxylic</td>
+				    <td><a href="/file/8.carboxylic.pdf">8. Carboxylic</a></td>
+				</tr>
+				<tr>
+    				<td>เคมี</td>
+   				 	<td>9. Ester</td>
+				    <td><a href="/file/9.Ester.pdf">9. Ester</a></td>
+				</tr>
+				  
 				
-				<div class="recentsub">
-					<h4>Math Sup (คณิตเพิ่มเติม)</h4>
-				</div>
-				<div class="recentdetail"><h4>02 - ความต่อเนื่องของฟังก์ชันบนช่วง</h4>
-					<p>Link : <a href="/hw/mathsup/02-confxrg">02-ความต่อเนื่องของฟังก์ชันบนช่วง</a></a></p>
-					<p>Date (วันสั่งงาน) : 10 June 2020</p>
-					<p>Description (เนื้อหา) : ข้อ 1-14(15) หน้า 64-66</p>
-				</div>
+				</table>
 					
 				
 			</li>
 
 		</div>
+
+		<script>
+			function searchingfx() {
+			  // Declare variables
+			  var input, filter, table, tr, td, i, txtValue;
+			  input = document.getElementById("searchinput");
+			  filter = input.value.toUpperCase();
+			  table = document.getElementById("datatable");
+			  tr = table.getElementsByTagName("tr");
+
+			  // Loop through all table rows, and hide those who don't match the search query
+			  for (i = 0; i < tr.length; i++) {
+			    td = tr[i].getElementsByTagName("td")[0];
+			    if (td) {
+			      txtValue = td.textContent || td.innerText;
+			      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			        tr[i].style.display = "";
+			      } 
+			      else {
+			        tr[i].style.display = "none";
+			      }
+			    }
+  			   }
+			}
+		</script>
 
 	</div>
 	<div class="hw">
