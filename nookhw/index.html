@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+	<title>Histogram : Uniform Distribution</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="header">
+			<h3>Histogram : Uniform Distribution</h3>
+		</div>
+	</div>
+	<div class="info">
+		<h3>Generating data between 0.0 to 5.0</h3>
+		<button style="margin:auto, margin-top:20px" onclick="generateNum()">Generate Data</button>
+
+
+		<script>
+			function generateNum() {
+
+		
+				var genNum = [];
+				var result = "";
+				var i;
+				for(i=0;i<1800;i++){
+					genNum[i] = (Math.floor((Math.random() * 50))/10);
+					result += genNum[i] + "<br>";
+				}
+  				var x = document.getElementById("showdata");
+  				x.innerHTML = result;
+
+
+  			
+
+				var trace = {
+    				x: genNum,
+    				type: 'histogram',
+    				marker: {
+          				color: "rgba(100, 200, 102, 0.7)",
+           				line: {
+       						color:  "rgba(100, 200, 102, 1)", 
+           				}
+           			},
+           			xbins: { 
+    					end: 5, 
+    					size: 0.2, 
+    					start: 0
+  					}
+  				};
+  				var layout = {
+  					title: "Histogram of data generated from uniform distribution", 
+  					xaxis: {title: "x", range: [0, 5]}, 
+  					yaxis: {title: "Frequency"}
+  				};
+				var data = [trace];
+				Plotly.newPlot('FirstGp', data, layout);
+
+
+			
+
+				var firstAverage = [];
+				var j;
+				var countleft = 1800;
+				var firstAvgDataBf = Object.assign([],genNum);
+				for (i=0;i<60;i++)
+				{
+					var sum = 0;
+					for (j=0;j<5;j++)
+					{
+						var randomchoosing;
+						randomchoosing = Math.floor(Math.random() * countleft);
+						sum += firstAvgDataBf[randomchoosing];
+						firstAvgDataBf.splice(randomchoosing,1);
+						countleft -= 1;
+					}
+					firstAverage[i] = sum/5;
+				}
+
+				var trace2 = {
+    				x: firstAverage,
+    				type: 'histogram',
+    				marker: {
+          				color: "rgba(100, 200, 102, 0.7)",
+           				line: {
+       						color:  "rgba(100, 200, 102, 1)", 
+           				}
+           			},
+           			xbins: { 
+    					end: 5, 
+    					size: 0.2, 
+    					start: 0
+  					},
+  					
+  				};
+  				var layout2 = {
+  					title: "Histogram of 60 sampling with n = 5", 
+  					xaxis: {title: "Average", range: [0, 5]}, 
+  					yaxis: {title: "Frequency"}
+  				};
+				var data2 = [trace2];
+				Plotly.newPlot('SecondGp', data2, layout2);
+
+
+				var secondAverage = [];
+				countleft = 1800;
+				var secondAvgDataBf = Object.assign([],genNum);
+				for (i=0;i<60;i++)
+				{
+					var sum = 0;
+					for (j=0;j<30;j++)
+					{
+						var randomchoosing;
+						randomchoosing = Math.floor(Math.random() * countleft);
+						sum += secondAvgDataBf[randomchoosing];
+						secondAvgDataBf.splice(randomchoosing,1);
+						countleft -= 1;
+					}
+					secondAverage[i] = sum/30;
+				}
+
+
+				var trace3 = {
+    				x: secondAverage,
+    				type: 'histogram',
+    				marker: {
+          				color: "rgba(100, 200, 102, 0.7)",
+           				line: {
+       						color:  "rgba(100, 200, 102, 1)", 
+           				}
+           			},
+           			xbins: { 
+    					end: 5, 
+    					size: 0.2, 
+    					start: 0
+  					}
+  				};
+  				var layout3 = {
+  					title: "Histogram of 60 sampling with n = 30", 
+  					xaxis: {title: "Average", range: [0, 5]}, 
+  					yaxis: {title: "Frequency"}
+
+  				};
+				var data3 = [trace3];
+				Plotly.newPlot('ThirdGp', data3, layout3);
+
+
+			}
+		</script>
+
+
+		<div class="datascroll" id="showdata"></div>
+
+	</div>
+	<div class="firstgraph" id='FirstGp'></div>
+	<div class="secondgraph" id='SecondGp'></div>
+	<div class="thirdgraph" id='ThirdGp'></div>
+
+
+</body>
